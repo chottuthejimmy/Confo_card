@@ -1,6 +1,6 @@
 {
-    "name": "confo_card",
-    "short_name": "confo_card",
+    "name": "Confo card",
+    "short_name": "Confo card",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
