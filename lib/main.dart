@@ -19,6 +19,7 @@ class _AppState extends State<App> {
     //   isPressed = !isPressed;
     // }
     return MaterialApp(
+        title: 'Confo card',
       home: Scaffold(
         body: Container(
           decoration: const BoxDecoration(
