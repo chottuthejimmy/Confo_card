@@ -15,11 +15,8 @@ class _AppState extends State<App> {
   bool _isVisible = false;
   @override
   Widget build(BuildContext context) {
-    // setState() {
-    //   isPressed = !isPressed;
-    // }
     return MaterialApp(
-        title: 'Confo card',
+      title: 'Confo card',
       home: Scaffold(
         body: Container(
           decoration: const BoxDecoration(
@@ -35,7 +32,6 @@ class _AppState extends State<App> {
           child: SafeArea(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
-              // mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 SizedBox(height: 100.0),
                 Container(
@@ -46,7 +42,7 @@ class _AppState extends State<App> {
                         color: Colors.blueGrey.shade700.withOpacity(1),
                         spreadRadius: 2,
                         blurRadius: 5,
-                        offset: Offset(0, 3), // changes position of shadow
+                        offset: Offset(0, 3),
                       ),
                     ],
                   ),
@@ -98,12 +94,21 @@ class _AppState extends State<App> {
                   child: Column(
                     children: <Widget>[
                       ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          elevation: 7.0,
+                          minimumSize: Size(310, 33),
+                          maximumSize: Size(310, 33),
+                          foregroundColor: Color(0xF9690BEE),
+                          backgroundColor: Color(0xff18FFE5),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                        ),
                         onPressed: () async {
                           Uri phoneNumber = Uri.parse('tel:+919113061380');
                           try {
                             launchUrl(phoneNumber);
                           } catch (e) {
-                            //To handle error and display error message
                             print("Aww , Sorry Something Went Wrong!! 😶");
                           }
                         },
@@ -121,43 +126,10 @@ class _AppState extends State<App> {
                             ),
                           ],
                         ),
-                        style: ElevatedButton.styleFrom(
-                          elevation: 7.0,
-                          minimumSize: Size(310, 33),
-                          maximumSize: Size(310, 33),
-                          foregroundColor: Color(0xF9690BEE),
-                          backgroundColor: Color(0xff18FFE5),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12.0),
-                          ),
-                        ),
-                      ), // call me
-                      // SizedBox(height: 5),
+                      ),
                       Padding(
                         padding: EdgeInsets.symmetric(vertical: 10.0),
                         child: ElevatedButton(
-                          onPressed: () async {
-                            Uri emailUrl = Uri.parse(
-                                'mailto:srfashionstks@gmail.com?subject=Namaste 🙏&body=Hello%20there 😊');
-                            try {
-                              launchUrl(emailUrl);
-                            } catch (e) {
-                              //To handle error and display error message
-                              print("Aww , Sorry Something Went Wrong!! 😶");
-                            }
-                          },
-                          child: Row(
-                            children: <Widget>[
-                              SizedBox(width: 73.0),
-                              Icon(Icons.email, color: Colors.cyan.shade900),
-                              SizedBox(width: 7.0),
-                              Text(' Email me',
-                                  style: TextStyle(
-                                      fontFamily: 'Pacific',
-                                      fontSize: 19.0,
-                                      letterSpacing: 1.875)),
-                            ],
-                          ),
                           style: ElevatedButton.styleFrom(
                             elevation: 7.0,
                             minimumSize: Size(310, 33),
@@ -168,10 +140,42 @@ class _AppState extends State<App> {
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                           ),
-                        ), // email me
+                          onPressed: () async {
+                            Uri emailUrl = Uri.parse(
+                                'mailto:srfashionstks@gmail.com?subject=Namaste 🙏&body=Hello%20there 😊');
+                            try {
+                              launchUrl(emailUrl);
+                            } catch (e) {
+                              print("Aww , Sorry Something Went Wrong!! 😶");
+                            }
+                          },
+                          child: Row(
+                            children: <Widget>[
+                              SizedBox(width: 73.0),
+                              Icon(Icons.email, color: Colors.cyan.shade900),
+                              SizedBox(width: 7.0),
+                              Text(
+                                ' Email me',
+                                style: TextStyle(
+                                    fontFamily: 'Pacific',
+                                    fontSize: 19.0,
+                                    letterSpacing: 1.875),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
-
                       ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          elevation: 7.0,
+                          minimumSize: Size(310, 33),
+                          maximumSize: Size(310, 33),
+                          foregroundColor: Color(0xF9690BEE),
+                          backgroundColor: Color(0xff18FFE5),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                        ),
                         onPressed: () async {
                           Uri whatsappUrl = Uri.parse(
                               "whatsapp://send?phone=${919113061380}&text=${"Hello!! 😊"}");
@@ -183,69 +187,31 @@ class _AppState extends State<App> {
                           }
                         },
                         child: Row(
-//                           crossAxisAlignment: CrossAxisAlignment.stretch,
-// mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             SizedBox(width: 73.0),
                             Container(
                               height: 22.0,
                               child: SvgPicture.asset(
                                 'icons/whatsapp-icon.svg',
-                                // fit: BoxFit.cover,
                                 height: 22.0,
                                 color: Colors.cyan.shade900,
                               ),
-                              // child: Image.asset(
-                              //   'icons/whatsapp_icon(1).png',
-                              //   fit: BoxFit.cover,
-                              // ),
                             ),
                             SizedBox(width: 7.0),
                             Text(
                               ' Text me',
                               style: TextStyle(
                                 fontFamily: 'Pacific',
-                                // color: Colors.white,
                                 fontSize: 19.0,
                                 letterSpacing: 1.875,
                               ),
                             ),
                           ],
                         ),
-                        style: ElevatedButton.styleFrom(
-                          elevation: 7.0,
-                          minimumSize: Size(310, 33),
-                          maximumSize: Size(310, 33),
-                          foregroundColor: Color(0xF9690BEE),
-                          backgroundColor: Color(0xff18FFE5),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12.0),
-                          ),
-                        ),
-                      ), // text me
-
+                      ),
                       Padding(
                         padding: EdgeInsets.symmetric(vertical: 10.0),
                         child: ElevatedButton(
-                          onPressed: () async {
-                            setState(() {
-                              _isVisible = !_isVisible;
-                            });
-                            // setState();
-                          },
-                          child: Row(
-                            children: <Widget>[
-                              SizedBox(width: 56.0),
-                              Icon(Icons.engineering,
-                                  color: Colors.cyan.shade900),
-                              SizedBox(width: 7.0),
-                              Text(" Let's Connect",
-                                  style: TextStyle(
-                                      fontFamily: 'Pacific',
-                                      fontSize: 19.0,
-                                      letterSpacing: 1.875)),
-                            ],
-                          ),
                           style: ElevatedButton.styleFrom(
                             elevation: 7.0,
                             minimumSize: Size(310, 33),
@@ -256,16 +222,34 @@ class _AppState extends State<App> {
                               borderRadius: BorderRadius.circular(12.0),
                             ),
                           ),
+                          onPressed: () async {
+                            setState(() {
+                              _isVisible = !_isVisible;
+                            });
+                          },
+                          child: Row(
+                            children: <Widget>[
+                              SizedBox(width: 56.0),
+                              Icon(Icons.engineering,
+                                  color: Colors.cyan.shade900),
+                              SizedBox(width: 7.0),
+                              Text(
+                                " Let's Connect",
+                                style: TextStyle(
+                                    fontFamily: 'Pacific',
+                                    fontSize: 19.0,
+                                    letterSpacing: 1.875),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(height: 15.0),
                       Visibility(
-
                         visible: _isVisible,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            // SizedBox(width: 50.0),
                             IconButton(
                               iconSize: 45.0,
                               onPressed: () async {
@@ -284,7 +268,6 @@ class _AppState extends State<App> {
                                 width: 45.0,
                               ),
                             ),
-                              // SizedBox(width: 10.0),
                             IconButton(
                               iconSize: 55.0,
                               onPressed: () async {
@@ -321,24 +304,24 @@ class _AppState extends State<App> {
                                 width: 42.0,
                               ),
                             ),
-                        IconButton(
-                          iconSize: 55.0,
-                          onPressed: () async {
-                            Uri github = Uri.parse(
-                                'https://github.com/chottuthejimmy');
-                            try {
-                              await launch(github.toString());
-                            } catch (e) {
-                              print(
-                                  "Aww , Sorry Something Went Wrong!! 😶");
-                            }
-                          },
-                          icon: SvgPicture.asset(
-                            'icons/github-dark.svg',
-                            height: 42.0,
-                            width: 42.0,
-                          ),
-                        ),
+                            IconButton(
+                              iconSize: 55.0,
+                              onPressed: () async {
+                                Uri github = Uri.parse(
+                                    'https://github.com/chottuthejimmy');
+                                try {
+                                  await launch(github.toString());
+                                } catch (e) {
+                                  print(
+                                      "Aww , Sorry Something Went Wrong!! 😶");
+                                }
+                              },
+                              icon: SvgPicture.asset(
+                                'icons/github-dark.svg',
+                                height: 42.0,
+                                width: 42.0,
+                              ),
+                            ),
                           ],
                         ),
                       ),
