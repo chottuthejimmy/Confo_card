@@ -1,5 +1,5 @@
 <div align="center">
-    <img src"app_icon.png" width="128" height="128" style="display: block; margin: 0 auto"/>
+    ![](app_icon.png)
     <h1>I am Rich</h1>
     <p>This project is a starting point of my Flutter development journey.</p>
 </div>
