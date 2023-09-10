@@ -1,6 +1,6 @@
 <div align="center">
     <img src= "https://raw.githubusercontent.com/chottuthejimmy/Confo_card/master/app_icon.png" width="128" height="128" style="display: block; margin: 0 auto"/>
-    <h1>I am Rich</h1>
+    <h1>Confo Card</h1>
     <p>This Flutter project has all my contact details and my social media handles.</p>
 </div>
 
